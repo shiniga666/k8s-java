@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dimas-java
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: dimas-java
+  template:
+    metadata:
+      labels:
+        app: dimas-java
+    spec:
+      containers:
+        - name: dimas-java
+          image: shiniga666/dimas-java:latest
+          ports:
+            - containerPort: 9090
